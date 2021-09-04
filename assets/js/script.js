@@ -15,6 +15,8 @@ function startTimer () {
     }
 }
 
+
+
 function startQuiz () {
     timerId = setInterval(startTimer, 1000)
     timerElement.textContent = time;
