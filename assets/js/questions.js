@@ -1,20 +1,56 @@
 var questions = [
     {
-        title : "we're going to ask a question here", 
+        title : "Which one of the following choices is not a primative?", 
         choices : [
-            "answer1", "answer2", "answer3", "answer4",
+            "number", "variable", "boolean", "string",
         ],
-        answer : "answer2"
+        answer : "variable"
     },
     {
-        title : "we're going to ask anorhwe question here", 
+        title : "Which of the following terms stores a series of Unicode characters inside of single or double quotes?", 
         choices : [
-            "answer1", "answer2", "answer3", "answer4",
+            "method", "div", "class", "string",
         ],
-        answer : "answer2"
+        answer : "string"
+    },
+
+    {
+        title : "Which of the following terms cannnot be used to define variables?", 
+        choices : [
+            "var", "let", "class", "const",
+        ],
+        answer : "string"
+    },
+
+    {
+        title : "Which of these terms can be used to access properties?", 
+        choices : [
+            "<", "[]", "$", ":",
+        ],
+        answer : "[]"
+    },
+
+    {
+        title : "Which of the following is a JavaScript package manager?", 
+        choices : [
+            "Node.js", "Bootstrap", "npm", "jQuery",
+        ],
+        answer : "npm"
     }
 ]
 
-// for (var i =0; i < questions.length; i++){
-//     console.log(questions[i]);
-//    }
+var score=0
+
+for (let index = 0; index < questions.length; index++) {
+    var userChoice = confirm(questions[index].q) 
+
+    if(userChoice===true && questions[index].a=="true"){
+        score++
+        alert("Correct!")
+    }
+    else {
+        alert("Incorrect!")
+    }
+}
+alert("final score: " + score)
+

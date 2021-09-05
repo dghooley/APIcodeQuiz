@@ -2,7 +2,7 @@ var questionIndex = 0;
 var time = 70;
 var timerId ;
 var questionsElement = document.getElementById("questions");
-var chhoicesElement = document.getElementById("question-choices");
+var choicesElement = document.getElementById("question-choices");
 var timerElement = document.getElementById("time");
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
@@ -12,50 +12,53 @@ var startButton = document.getElementById("start");
 function startTimer () {
     time--;
     timerElement.textContent = time;
+}
 
-/*    var timeInterval = setInterval(function) {
-    if (time > 1) {
-       timerEl.textContent = time + ' seconds remaining ';
-       time--;
-    }else if (time === 1) {
-       timerEl.textContent = time + ' second remaining ';
-       time--;
-    }else {
-       timerEl.textContent = '';
-       clearInterval(time);
-       displayMessage();   
- }*/
+function timerEl () {
+    var time = 70;
+    var timeIntervalID = setInterval(function() {
+        if(timeleft >= 0){
+            if(timeleft === 0){
+                timerEl.textContent =""
+                clearInterval(timeIntervalID)
+                displayMessage()
+            }
+            else {
+                timerEl.textContent = timeleft + "seconds remaining"
+            }
+        }
+        timeleft--
+        console.log(timeleft)
+    }, 1000);
+    startButton.onclick = countdown;
 }
 
 function startQuiz () {
     timerId = setInterval(startTimer, 1000)
     timerElement.textContent = time;
+    
     var startScreenElement = document.getElementById("start-screen");
     startScreenElement.setAttribute("class", "hide");
     questionsElement.removeAttribute("class");
     showQuestions();
-
 }
+
 
 function showQuestions () {
     var currentQuestion = questions[questionIndex];
-    var questionTitleElement = document.getElementById("question-title");
+    var questionTitleElement = document.getElementById("question-title"), href="/assets.questions.js";
     questionTitleElement.textContent = currentQuestion.title;
 
-    chhoicesElement.innerHTML = "";
+    choicesElement.innerHTML = "";
 
     currentQuestion.choices.forEach(function(choice, i){
 
-        var choiceButton = document.createElement("button");
-        choiceButton.setAttribute("class", "choice");
-        choiceButton.setAttribute("value", choice);
+    var choiceButton = document.createElement("button");
+    choiceButton.setAttribute("class", "choice");
+    choiceButton.setAttribute("value", choice);
 // create on click event to start another function that will handle the choice buttons being clicked
-        choiceButton.textContent = i +1 + " " + choice;
-        chhoicesElement.append(choiceButton)
-
-        
-       
-
+    choiceButton.textContent = i +1 + " " + choice;
+    choicesElement.append(choiceButton)
     })
 
 }
