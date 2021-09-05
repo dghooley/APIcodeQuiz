@@ -10,7 +10,7 @@ function startTimer () {
     time--;
     timerElement.textContent = time;
     if (time <= 0) {
-        // createFunctionToEndQuiz
+        
         
     }
 }

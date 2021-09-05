@@ -2,11 +2,10 @@
     display: none;
 
 }
-
-
+/*
 :root {
     background-color: #ffffff3f;
-    font-size: 100%
+    font-size: 80%
 }
 
 * {
@@ -31,7 +30,8 @@ h1 > span {
 
 
 /* BUTTONS */
-.btnStart, .btnChoices {
+/*
+.btn, .btnStart, .btnChoices {
     font-size: 1.8rem;
     padding: 1rem 0;
     width: 20rem;
@@ -43,6 +43,7 @@ h1 > span {
     background-color: white;
 }
 
+
 .btnStart, .btnChoices:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(137, 170, 147, 0.562);
@@ -50,12 +51,11 @@ h1 > span {
     transition: transform 150ms;
 }
 
-/*.btnStarn, .btnChoices, .btn[disabled]:hover {
+.btnStarn, .btnChoices, .btn[disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
-}*/
-
+}
 
 
 .container {
