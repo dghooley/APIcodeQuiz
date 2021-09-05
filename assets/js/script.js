@@ -2,20 +2,30 @@ var questionIndex = 0;
 var time = 70;
 var timerId ;
 var questionsElement = document.getElementById("questions");
-var startButton = document.getElementById("start");
 var chhoicesElement = document.getElementById("question-choices");
 var timerElement = document.getElementById("time");
+var timerEl = document.getElementById('countdown');
+var mainEl = document.getElementById('main');
+var startButton = document.getElementById("start");
+
 
 function startTimer () {
     time--;
     timerElement.textContent = time;
-    if (time <= 0) {
-        
-        
-    }
+
+/*    var timeInterval = setInterval(function) {
+    if (time > 1) {
+       timerEl.textContent = time + ' seconds remaining ';
+       time--;
+    }else if (time === 1) {
+       timerEl.textContent = time + ' second remaining ';
+       time--;
+    }else {
+       timerEl.textContent = '';
+       clearInterval(time);
+       displayMessage();   
+ }*/
 }
-
-
 
 function startQuiz () {
     timerId = setInterval(startTimer, 1000)
@@ -39,19 +49,20 @@ function showQuestions () {
         var choiceButton = document.createElement("button");
         choiceButton.setAttribute("class", "choice");
         choiceButton.setAttribute("value", choice);
-
+// create on click event to start another function that will handle the choice buttons being clicked
         choiceButton.textContent = i +1 + " " + choice;
-
         chhoicesElement.append(choiceButton)
 
         
-       // create on click event (hint: line 51) to start another function that will handle the choice buttons being clicked
+       
 
     })
 
 }
-
-// dclare function to handle what happens after you click the choice button
+//TO DO LIST:
+// if-else statement to stop timer either at zero, or when the quiz is finished
+// Q & A's
+// declare function to handle what happens after you click the choice button
 // test if the choice the user chose is equal to currentQuestions.answer
 // test if the current questions index is equal to questions.length and if it is fire of function that will end the quiz
 startButton.onclick = startQuiz;
