@@ -14,14 +14,14 @@ function startTimer () {
     timerElement.textContent = time;
 }
 
-function timerEl () {
+/*function timerEl () {
     var time = 70;
-    var timeIntervalID = setInterval(function() {
+    var timerId = setInterval(function() {
         if(timeleft >= 0){
             if(timeleft === 0){
-                timerEl.textContent =""
-                clearInterval(timeIntervalID)
-                displayMessage()
+                timerEl.textContent = "";
+                clearInterval(timerId);
+                displayMessage();
             }
             else {
                 timerEl.textContent = timeleft + "seconds remaining"
@@ -30,8 +30,8 @@ function timerEl () {
         timeleft--
         console.log(timeleft)
     }, 1000);
-    startButton.onclick = countdown;
 }
+*/
 
 function startQuiz () {
     timerId = setInterval(startTimer, 1000)

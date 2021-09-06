@@ -38,7 +38,7 @@ var questions = [
         answer : "npm"
     }
 ]
-
+/*
 var score=0
 
 for (let index = 0; index < questions.length; index++) {
@@ -46,11 +46,13 @@ for (let index = 0; index < questions.length; index++) {
 
     if(userChoice===true && questions[index].a=="true"){
         score++
-        alert("Correct!")
+        window.alert("Correct!")
     }
     else {
-        alert("Incorrect!")
+        window.alert("Incorrect!")
     }
 }
-alert("final score: " + score)
 
+
+window.alert("final score: " + score)
+*/
